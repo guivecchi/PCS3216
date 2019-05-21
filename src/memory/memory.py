@@ -1,25 +1,25 @@
 MEMORY_SIZE = 65563
 
 # memory allocation starts in 0 and goes to 65562
-memory = [None, None, None, None, None, None, None, None, None, None]
+memory = [None for i in range(0, MEMORY_SIZE)]
 
 
 def read_byte(address):
-    if(address < 0 or address > 65562):
+    if(address < 0 or address > MEMORY_SIZE - 1):
         return "UNABLE TO ACCESS ADRESS"
     else:
         return memory[address]
 
 
 def print_byte(address):
-    if(address < 0 or address > 65562):
+    if(address < 0 or address > MEMORY_SIZE - 1):
         print("UNABLE TO ACCESS ADRESS")
     else:
         print(memory[address])
 
 
 def write_byte(value, address):
-    if(address < 0 or address > 65562):
+    if(address < 0 or address > MEMORY_SIZE - 1):
         print "UNABLE TO ACCESS ADRESS"
     elif(value > 0xff):
         print("THE VALUE IS BIGGER THAN A BYTE")
@@ -29,7 +29,7 @@ def write_byte(value, address):
 
 
 def read_word(address):
-    if(address < 0 or address > 65561):
+    if(address < 0 or address > MEMORY_SIZE - 2):
         return "UNABLE TO ACCESS ADRESS"
     elif(str(memory[address + 1]) == "None"):
         return (str(memory[address]) + str(memory[address + 1]))
@@ -38,7 +38,7 @@ def read_word(address):
 
 
 def print_word(address):
-    if(address < 0 or address > 65561):
+    if(address < 0 or address > MEMORY_SIZE - 2):
         print("UNABLE TO ACCESS ADRESS")
     elif(str(memory[address + 1]) == "None"):
         print(str(memory[address]) + str(memory[address + 1]))
@@ -47,7 +47,7 @@ def print_word(address):
 
 
 def write_word(value, address):
-    if(address < 0 or address > 65561):
+    if(address < 0 or address > MEMORY_SIZE - 2):
         return "UNABLE TO ACCESS ADDRESS"
     else:
         if(value < 0x100):
@@ -66,6 +66,8 @@ def write_word(value, address):
             memory[address +
                    1] = hex(int(str(hex(value))[4] + str(hex(value))[5], 16))
 
+
+print(len(memory))
 
 print('\n')
 for i in range(0, 10):
