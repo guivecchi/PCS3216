@@ -9,7 +9,9 @@ Repositório para o desenvolvimento do projeto da disciplina PCS3216 -
 ## Registradores
 * Ponteiro de pilha (SP) = 2 bytes
 * Program Counter (PC) = 2 bytes
-* Aritméticos/lógicos = 2 bytes / Registrador
+* Aritméticos/lógicos (2 bytes / Registrador)
+  * A0 a A7: Registradores de endereço
+  * D0 a D7: Registradores de dados
 
 ## Blocos Funcionais
 * Unidade Lógica Aritmética (ULA): Operações
