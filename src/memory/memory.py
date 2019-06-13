@@ -1,3 +1,5 @@
+# Define lista que funcionará como memória e suas operações
+
 MEMORY_SIZE = 65563
 
 # memory allocation starts in 0 and goes to 65562
@@ -20,7 +22,7 @@ def print_byte(address):
 
 def write_byte(value, address):
     if(address < 0 or address > MEMORY_SIZE - 1):
-        print "UNABLE TO ACCESS ADRESS"
+        print("UNABLE TO ACCESS ADRESS")
     elif(value > 0xff):
         print("THE VALUE IS BIGGER THAN A BYTE")
     else:
@@ -68,8 +70,3 @@ def write_word(value, address):
                 int(str(hex(value))[2] + str(hex(value))[3], 16))
             memory[address +
                    1] = hex(int(str(hex(value))[4] + str(hex(value))[5], 16))
-
-
-print('\n')
-for i in range(0, 10):
-    print("Address " + str(i) + ": " + str(memory[i]))
