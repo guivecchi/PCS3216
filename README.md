@@ -1,6 +1,10 @@
 # PCS3216
 Repositório para o desenvolvimento do projeto da disciplina PCS3216 - 
 
+## Processador Hospedeiro
+O processador hospedeiro é uma máquina virtual desenvolvida na linguagem Python que roda sobre uma máquina real. A grande vantagem desta abordagem é a simplicidade de desenvolvimento enquanto que a desvantagem é a perda de performance devido ao fato de que o processador roda sobre um software. 
+Características de Memória, Registradores, Operações etc são descritas abaixo
+
 ## Memória 
 * 16 bits por palavra, ou seja, palavras de 2 bytes. 
 * 16 bits de endereçamento, ou seja, 4 dígitos hexadecimais formam cada endereço
@@ -17,3 +21,14 @@ Repositório para o desenvolvimento do projeto da disciplina PCS3216 -
 ## Blocos Funcionais
 * Unidade Lógica Aritmética (ULA): Operações
 * Unidade de Controle (UC): Instruções
+
+## Operações
+* `JMP xxxx`: salto incodicional para o endereço `xxxx` (endereços detonados em número decimal)
+* `JZR xxxx`: salta para o endereço `xxxx` se o indicador de Valor Zero do SR estiver ativo, ou seja, se uma operação anterior teve resultado igual à zero
+* `JNG xxxx`: salta para o endereço `xxxx` se o indicador de Valor Negativo do SR estiver ativo, ou seja, se uma operação anterior teve resultado negativo
+* `BSR xxxx`: salta para a subrotina que se inicia no endereço `xxxx`
+* `SUM xxxx yyyy`: soma os valores presentes nos endereços `xxxx` e `yyyy` da memória e armazena a resposta em `xxxx`
+* `SUB xxxx yyyy`: subtrai o valor presente no endereço `yyyy` de `xxxx` e armazena a resposta em `xxxx`
+* `MUL xxxx yyyy`: multiplica os valores presentes nos endereços `xxxx` e `yyyy` e armazena em `xxxx`
+* `DIV xxxx yyyy`: divide os valores presentes nos endereços `xxxx`e `yyyy` e armazena em `xxxx`
+* `STR xxxx 0xZZZZZZZZ`: armazena a word hexadecimal `ZZZZZZZZ` no endereço `xxxx`
