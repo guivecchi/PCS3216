@@ -2,7 +2,7 @@
 Repositório para o desenvolvimento do projeto da disciplina PCS3216 - 
 
 ## Processador Hospedeiro
-O processador hospedeiro é uma máquina virtual desenvolvida na linguagem Python que roda sobre uma máquina real. A grande vantagem desta abordagem é a simplicidade de desenvolvimento enquanto que a desvantagem é a perda de performance devido ao fato de que o processador roda sobre um software. 
+O processador desenvolvido é uma máquina virtual desenvolvida na linguagem Python que roda sobre um processador hospedeiro em uma máquina real. A grande vantagem desta abordagem é a simplicidade de desenvolvimento enquanto que a desvantagem é a perda de performance devido ao fato de que o processador virtual roda sobre um software. 
 Características de Memória, Registradores, Operações etc são descritas abaixo
 
 ## Memória 
@@ -19,8 +19,8 @@ Características de Memória, Registradores, Operações etc são descritas abai
 * Registrador de Status (SR) = 1 byte, mas apenas 3 bits serão utilizados indicando, respectivamente, Valor Zero, Valor Negativo e Overflow
 
 ## Equipamentos de Entrada/Saída/Armazenamento
-* **Entrada**: O equipamento de entrada usado pelo processador é o _stdin_ do computador host. Neste caso, a entrada será um arquivo de texto com instruções ou instruções inseridas diretamente no terminal
-* **Saída**: O equipamento de saída usado pelo processador é o _stdout_ do computador host. Neste caso a saída será a impressão, no temrinal, dos valores dos registradores
+* **Entrada**: O equipamento de entrada usado pelo processador é o _stdin_ do processador hospedeiro. Neste caso, a entrada será um arquivo de texto com instruções ou instruções inseridas diretamente no terminal
+* **Saída**: O equipamento de saída usado pelo processador é o _stdout_ do processador hospedeiro. Neste caso a saída será a impressão, no temrinal, dos valores dos registradores
 * **Armazenamento**: Memória. Esta é implementada como um vetor de words com valor hexadecimal
 
 ## Blocos Funcionais
