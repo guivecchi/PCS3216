@@ -18,6 +18,11 @@ Características de Memória, Registradores, Operações etc são descritas abai
   * D0 a D7: Registradores de dados
 * Registrador de Status (SR) = 1 byte, mas apenas 3 bits serão utilizados indicando, respectivamente, Valor Zero, Valor Negativo e Overflow
 
+## Equipamentos de Entrada/Saída/Armazenamento
+* **Entrada**: O equipamento de entrada usado pelo processador é o _stdin_ do computador. Neste caso, a entrada será um arquivo de texto com instruções ou instruções inseridas diretamente no terminal
+* **Saída**: O equipamento de saída usado pelo processador é o _stdout_ do computador. Neste caso a saída será a impressão, no temrinal, dos valores dos registradores
+* **Armazenamento**: Memória. Esta é implementada como um vetor de words com valor hexadecimal
+
 ## Blocos Funcionais
 * Unidade Lógica Aritmética (ULA): Operações
 * Unidade de Controle (UC): Instruções
