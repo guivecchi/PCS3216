@@ -11,12 +11,11 @@ Características de Memória, Registradores, Operações etc são descritas abai
 * 2<sup>16</sup> = 65536 bytes = 32768 palavras = 64 Kbytes
 
 ## Registradores
-* Ponteiro de pilha (SP) = 2 bytes
+* Acumulador (AC) = 2 bytes
 * Program Counter (PC) = 2 bytes
 * Aritméticos/lógicos (2 bytes / Registrador)
   * A0 a A7: Registradores de endereço
   * D0 a D7: Registradores de dados
-* Registrador de Status (SR) = 1 byte, mas apenas 3 bits serão utilizados indicando, respectivamente, Valor Zero, Valor Negativo e Overflow
 
 ## Equipamentos de Entrada/Saída/Armazenamento
 * **Entrada**: O equipamento de entrada usado pelo processador é o _stdin_ do processador hospedeiro. Neste caso, a entrada será um arquivo de texto com instruções ou instruções inseridas diretamente no terminal
@@ -27,13 +26,14 @@ Características de Memória, Registradores, Operações etc são descritas abai
 * Unidade Lógica Aritmética (ULA): Operações
 * Unidade de Controle (UC): Instruções
 
-## Operações
-* `JMP xxxx`: salto incodicional para o endereço `xxxx` (endereços detonados em número decimal)
-* `JZR xxxx`: salta para o endereço `xxxx` se o indicador de Valor Zero do SR estiver ativo, ou seja, se uma operação anterior teve resultado igual à zero
-* `JNG xxxx`: salta para o endereço `xxxx` se o indicador de Valor Negativo do SR estiver ativo, ou seja, se uma operação anterior teve resultado negativo
-* `BSR xxxx`: salta para a subrotina que se inicia no endereço `xxxx`
-* `SUM xxxx yyyy`: soma os valores presentes nos endereços `xxxx` e `yyyy` da memória e armazena a resposta em `xxxx`
-* `SUB xxxx yyyy`: subtrai o valor presente no endereço `yyyy` de `xxxx` e armazena a resposta em `xxxx`
-* `MUL xxxx yyyy`: multiplica os valores presentes nos endereços `xxxx` e `yyyy` e armazena em `xxxx`
-* `DIV xxxx yyyy`: divide os valores presentes nos endereços `xxxx`e `yyyy` e armazena em `xxxx`
-* `STR xxxx 0xZZZZZZZZ`: armazena a word hexadecimal `ZZZZZZZZ` no endereço `xxxx`
+## Operações 
+* `JP xxxx` (código hexa: /0xxxx): salto incodicional para o endereço `xxxx` (endereços detonados em número hexadecimal)
+* `JZ xxxx` (código hexa: /1xxxx): salta para o endereço `xxxx` se o valor no acumulador for igual a zero.
+* `JN xxxx` (código hexa: /2xxxx): salta para o endereço `xxxx` se o valor no acumulador for negativo.
+* `+ xxxx` (código hexa: /3xxxx): soma acumulador + conteúdo do endereço `xxxx`.
+* `- xxxx`(código hexa: /4xxxx): subtrai acumulador - conteúdo do endereço `xxxx`.
+* `* xxxx` (código hexa: /5xxxx): multiplica acumulador * conteúdo do endereço `xxxx`.
+* `/ xxxx` (código hexa: /6xxxx): divide acumulador / conteúdo do endereço `xxxx`.
+* `LD xxxx` (código hexa: /7xxxx): carrega acumulador com dado presente no endereço `xxxx`.
+* `MM xxxx` (código hexa: /8xxxx): move o valor do acumulador para o endereço `xxxx`.
+* `SC xxxx` (código hexa: /9xxxx): desvia para a sub-rotina que se inicia no endereço `xxxx`.
