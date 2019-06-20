@@ -1,7 +1,7 @@
 # Define registradores e suas operações
 REGISTER_SIZE = 2 # Tamanho de uma WORDs
 
-SP = [None for i in range(0, REGISTER_SIZE)]
+ACC = [None for i in range(0, REGISTER_SIZE)]
 PC = [None for i in range(0, REGISTER_SIZE)]
 AX = [None for i in range(0, 8*REGISTER_SIZE)] # A0 to A7
 DX = [None for i in range(0, 8*REGISTER_SIZE)] # D0 to D7
