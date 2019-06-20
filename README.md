@@ -8,10 +8,10 @@ Características de Memória, Registradores, Operações etc são descritas abai
 ## Memória 
 * 16 bits por palavra, ou seja, palavras de 2 bytes. 
 * 16 bits de endereçamento, ou seja, 4 dígitos hexadecimais formam cada endereço
-* 2<sup>16</sup> = 65536 bytes = 32768 palavras = 64 Kbytes
+* 2<sup>12</sup> = 4096 bytes = 2048 palavras = 4 Kbytes
 
 ## Registradores
-* Acumulador (AC) = 2 bytes
+* Acumulador (ACC) = 2 bytes
 * Program Counter (PC) = 2 bytes
 * Aritméticos/lógicos (2 bytes / Registrador)
   * A0 a A7: Registradores de endereço
@@ -27,13 +27,13 @@ Características de Memória, Registradores, Operações etc são descritas abai
 * Unidade de Controle (UC): Instruções
 
 ## Operações 
-* `JP xxxx` (código hexa: /0xxxx): salto incodicional para o endereço `xxxx` (endereços detonados em número hexadecimal)
-* `JZ xxxx` (código hexa: /1xxxx): salta para o endereço `xxxx` se o valor no acumulador for igual a zero.
-* `JN xxxx` (código hexa: /2xxxx): salta para o endereço `xxxx` se o valor no acumulador for negativo.
-* `+ xxxx` (código hexa: /3xxxx): soma acumulador + conteúdo do endereço `xxxx`.
-* `- xxxx`(código hexa: /4xxxx): subtrai acumulador - conteúdo do endereço `xxxx`.
-* `* xxxx` (código hexa: /5xxxx): multiplica acumulador * conteúdo do endereço `xxxx`.
-* `/ xxxx` (código hexa: /6xxxx): divide acumulador / conteúdo do endereço `xxxx`.
-* `LD xxxx` (código hexa: /7xxxx): carrega acumulador com dado presente no endereço `xxxx`.
-* `MM xxxx` (código hexa: /8xxxx): move o valor do acumulador para o endereço `xxxx`.
-* `SC xxxx` (código hexa: /9xxxx): desvia para a sub-rotina que se inicia no endereço `xxxx`.
+* `JP xxx` (código hexa: /0xxx): salto incodicional para o endereço `xxx` (endereços detonados em número hexadecimal)
+* `JZ xxx` (código hexa: /1xxx): salta para o endereço `xxx` se o valor no acumulador for igual a zero.
+* `JN xxx` (código hexa: /2xxx): salta para o endereço `xxx` se o valor no acumulador for negativo.
+* `+ xxx` (código hexa: /3xxx): soma acumulador + conteúdo do endereço `xxx`.
+* `- xxx`(código hexa: /4xxx): subtrai acumulador - conteúdo do endereço `xxx`.
+* `* xxx` (código hexa: /5xxx): multiplica acumulador * conteúdo do endereço `xxx`.
+* `/ xxx` (código hexa: /6xxx): divide acumulador / conteúdo do endereço `xxx`.
+* `LD xxx` (código hexa: /7xxx): carrega acumulador com dado presente no endereço `xxx`.
+* `MM xxx` (código hexa: /8xxx): move o valor do acumulador para o endereço `xxx`.
+* `SC xxx` (código hexa: /9xxx): desvia para a sub-rotina que se inicia no endereço `xxx`.
