@@ -1,6 +1,6 @@
 # Define lista que funcionará como memória e suas operações
 
-MEMORY_SIZE = 65563
+MEMORY_SIZE = 4095
 
 # memory allocation starts in 0 and goes to 65562
 memory = [None for i in range(0, MEMORY_SIZE)]
