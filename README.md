@@ -36,4 +36,10 @@ Características de Memória, Registradores, Operações etc são descritas abai
 * `/ xxx` (código hexa: /6xxx): divide acumulador / conteúdo do endereço `xxx`.
 * `LD xxx` (código hexa: /7xxx): carrega acumulador com dado presente no endereço `xxx`.
 * `MM xxx` (código hexa: /8xxx): move o valor do acumulador para o endereço `xxx`.
-* `SC xxx` (código hexa: /9xxx): desvia para a sub-rotina que se inicia no endereço `xxx`.
+* `SC nome_da_subrotina` (código hexa: /9xxx): desvia para a sub-rotina com nome `nome_da_subrotina` e guarda endereço de retorno.
+
+### Pseudo-Operações
+* @: ORIGIN: Operando xxx. Indica para o montador o endereço inicial do código a ser montado.
+* #: END: Operando xxx. Indica para o montador o final do programa a ser montado e o endereço de partida de execução do programa.
+* $: ARRAY: Operando xxx. Define área de trabalho de tamanho indicado pelo operando da operação. Se faz isso nesse sistema inserindo o valor em xxx posições seguidas da memória.
+* K: CONSTANT: Operando xx. Preenche byte corrente com constante xx.
